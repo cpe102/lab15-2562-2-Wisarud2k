@@ -25,3 +25,30 @@ int main(){
 }
 
 //Write definition of randData(), showData() and findColSum()
+void randData(double *dptr,int n,int m){
+	for(int i=0;i<n*m;i++){
+		*dptr=rand()%101/100.0;
+		dptr+=1;
+		
+	}
+}
+
+void showData(double * data,int x,int y){
+	for(int i=1;i<=x*y;i++){
+		cout << *data << "\t";
+		data+=1;
+		if(i%y==0){
+			cout << "\n";
+		}
+		
+	}
+}
+
+void findColSum(const double* dptr,double *result,int n,int m){
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			*(result+j)+=*dptr;
+			dptr+=1;
+		}
+	}
+}
